@@ -1,0 +1,22 @@
+{
+  "name": "node_study",
+  "version": "1.0.0",
+  "description": "node study note",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frozen-smile/hello-world.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "deep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frozen-smile/hello-world/issues"
+  },
+  "homepage": "https://github.com/frozen-smile/hello-world#readme"
+}
