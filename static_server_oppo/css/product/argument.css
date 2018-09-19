@@ -1,0 +1,78 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+/*头部*/
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    padding-bottom: 10px;
+    background: rgba(255, 255, 255, 0.7);
+}
+nav{
+  width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+nav::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+/*logo*/
+nav img{
+  display: inline-block;
+  float: left;
+  margin-right: 50px;
+  margin-left: 20px;
+}
+/*参数*/
+.argument{
+  float: left;
+  padding: 20px;
+  margin-right: 50px;
+}
+.argument a{
+  display: inline-block;
+  text-decoration: none;
+  color: #a0a0a0;
+  vertical-align: bottom;
+  margin: 0 20px;
+}
+.argument a:nth-child(7){
+  color: #3c3c3c;
+}
+.argument a:hover{
+  color: #3c3c3c;
+}
+/*购买*/
+.buy{
+  float: left;
+  padding: 15px;
+  text-align: center;
+  margin-right: 20px;
+}
+.buy a{
+  display: inline-block;
+  text-decoration: none;
+  font-size: 17px;
+  background: #52a763;
+  color: #fff;
+  border-radius: 4px;
+  margin-right: 10px;
+  line-height: 35px;
+}
+.buy a:nth-child(1){
+  width: 100px;
+  height: 35px;
+  }
+.buy a:nth-child(2){
+    width: 130px;
+    height: 35px;
+    }
+/*内容*/
+.content{
+  width: 100%;
+  text-align: center;
+}

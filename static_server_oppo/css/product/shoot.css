@@ -1,0 +1,295 @@
+
+*{
+  padding: 0;
+  margin: 0;
+}
+.wrap{
+  width: 100%;
+}
+/*头部*/
+header{
+  width: 100%;
+  height: 135px;
+  margin: 0 auto;
+}
+/*上导航*/
+.nav1{
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  background: rgb(33, 157, 113);
+}
+.navTop{
+  width: 1220px;
+  text-align: right;
+  color: #fff;
+  padding: 0;
+  font-size: 0px;
+  margin: 0 auto;
+
+}
+.navTop span{
+  font-size: 14px;
+  border-left: 1px solid rgb(73, 167, 115);
+  padding: 6px 16px;
+}
+.navTop span:hover{
+  background: rgb(73, 167, 115);
+  cursor: pointer;
+}
+/*下导航*/
+.nav2{
+  width: 100%;
+  height:80px;
+  line-height: 80px;
+  background: #fff;
+  text-align: center;
+}
+.navBottom{
+  width: 1220px;
+  padding: 0;
+  font-size: 0px;
+  margin: 0 auto;
+  text-align: right;
+}
+.navBottom::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.navBottom img{
+  float: left;
+  padding: 30px;
+  padding-left: 0px;
+}
+.navBottom a{
+  text-decoration: none;
+  font-size: 16px;
+  color: rgb(154,154,154);
+  margin: 0 20px;
+  padding-bottom: 5px;
+}
+.navBottom a:hover{
+  cursor: pointer;
+  color: #000;
+}
+/*内容*/
+.content{
+  width: 1220px;
+  margin: 0 auto;
+}
+/*内容导航*/
+.contNav{
+  width: 100%;
+  margin-top: 10px;
+}
+.contNav a{
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-size: 17px;
+  padding: 10px 35px;
+}
+.contNav a:hover{
+  background: rgb(73, 165, 115);
+  border-radius: 2px;
+  color: #fff;
+}
+.contNav a:nth-child(3){
+  background: rgb(73, 165, 115);
+  border-radius: 2px;
+  color: #fff;
+}
+/*内容文字标题*/
+.headline{
+  text-align: center;
+  margin-top: 20px;
+}
+.headline h1{
+  color: #5b5b5b;
+  margin: 15px;
+  margin-top: 70px;
+  font-size: 32px;
+  font-weight: normal;
+}
+.headline h2{
+  color: rgb(114,114,114);
+  padding: 5px;
+  font-size: 27px;
+  font-weight: normal;
+}
+.headline a{
+  text-decoration: none;
+}
+.headline a h2{
+  padding-top: 20px;
+}
+.headline a h2:hover{
+  color: rgb(73, 165, 115);
+}
+/*图片部分*/
+.contImg{
+  margin-top: 55px;
+  width: 100%;
+  text-align: right;
+  font-size: 0;
+}
+.contImg::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+/*1-6*/
+.imgs{
+  background: rgb(239, 239, 239);
+}
+.imgs img{
+  width: 100%;
+  height: 880px;
+}
+.contImg a{
+    font-size: 21px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 0;
+  color: rgb(73, 165, 115);
+}
+.contImg p{
+  color: rgb(108, 108, 108);
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+/*7*/
+.contImg span{
+    font-size: 21px;
+  margin-top: 10px;
+  display: inline-block;
+  width: 58px;
+  float: left;
+  color: rgb(115, 115, 115);
+  background: url(../../img/product/product/bg.png) -524px -385px no-repeat;
+}
+/*11*/
+.contImg b{
+    font-size: 21px;
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: normal;
+  text-align: left;
+  float: left;
+  color: rgb(115, 115, 115);
+}
+/*15*/
+.texts a:nth-of-type(2){
+  color: rgb(108, 108, 108);
+  display: block;
+  padding: 0;
+  font-size: 18px;
+}
+/*17*/
+.img17 img{
+  height: 665px;
+}
+.texts span{
+  width:20px;
+  height: 20px;
+  background: url(../../img/product/product/bg.png) -524px -385px no-repeat;
+  margin-top: 0px;
+    font-size: 21px;
+}
+.texts h3{
+  font-weight:lighter;
+  font-size: 21px;
+  float: left;
+  color: rgb(115, 115, 115);
+}
+/*18*/
+.cont18 {
+  text-align: center;
+}
+ .img18 img{
+  width: 50%;
+}
+.text18::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.text18 a{
+    font-size: 21px;
+  float: right;
+}
+.text18 b{
+    font-size: 21px;
+  margin-bottom: 30px;
+}
+.text18{
+  position: relative;
+}
+.text18 h3{
+    font-size: 21px;
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+}
+.text18 span{
+    font-size: 21px;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+}
+/*21*/
+.img21 img{
+  height: 1573px;
+}
+/*22*/
+.img22 img{
+  height: 1556px;
+}
+/*23*/
+.img23 img{
+  height:1176px;
+}
+/*24*/
+.img24 img{
+  height: 395px;
+}
+/*25*/
+.img25 img{
+  height: 344px;
+}
+/*31*/
+.img31 img{
+  height: 1800px;
+}
+/*37*/
+.img37 img{
+  height: 1190px;
+}
+/*38*/
+.img38 img{
+  height: 1900px;
+}
+/*39*/
+.img39 img{
+  width: 90%;
+  height: 780px;
+}
+.text38::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.text38 a{
+  float: right;
+}
+/*40*/
+.img40 img{
+  width: 85%;
+  height: 660px;
+}
+/*41*/
+.img41 img{
+  width: 85%;
+  height: 990px;
+}

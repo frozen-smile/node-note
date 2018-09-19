@@ -1,0 +1,348 @@
+
+*{
+  padding: 0;
+  margin: 0;
+}
+.wrap{
+  background: rgb(245,245,245);
+  margin: 0 auto;
+}
+/*头部*/
+header{
+  width: 100%;
+  height: 135px;
+  margin: 0 auto;
+}
+/*上导航*/
+.nav1{
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  background: rgb(33, 157, 113);
+}
+.navTop{
+  width: 1220px;
+  text-align: right;
+  color: #fff;
+  padding: 0;
+  font-size: 0px;
+  margin: 0 auto;
+
+}
+.navTop span{
+  font-size: 14px;
+  border-left: 1px solid rgb(73, 167, 115);
+  padding: 4px 16px;
+}
+.navTop span:hover{
+  background: rgb(73, 167, 115);
+  cursor: pointer;
+}
+/*下导航*/
+.nav2{
+  width: 100%;
+  height:80px;
+  line-height: 80px;
+  background: #fff;
+  text-align: center;
+}
+.navBottom{
+  width: 1220px;
+  padding: 0;
+  font-size: 0px;
+  margin: 0 auto;
+  text-align: right;
+}
+.navBottom::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.navBottom img{
+  float: left;
+  padding: 30px;
+  padding-left: 0px;
+}
+.navBottom a{
+  text-decoration: none;
+  font-size: 16px;
+  color: rgb(154,154,154);
+  margin: 0 20px;
+  padding-bottom: 5px;
+}
+.navBottom a:nth-child(3){
+  border-bottom: 2px solid rgb(40, 140, 93);
+  color: #000;
+}
+.navBottom a:hover{
+  cursor: pointer;
+  color: #000;
+}
+/*内容*/
+.content{
+  width: 1220px;
+  margin: 0 auto;
+}
+/*首页/产品*/
+.homePage::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.homePage .shouYe{
+  margin-bottom: 20px;
+  color: gray;
+}
+.shouYe a{
+  color: gray;
+  text-decoration: none;
+}
+/*左边图片*/
+.homeLeft{
+  width: 65%;
+  float: left;
+}
+.homeL1{
+  width: 100%;
+  height: 368px;
+  background: #fff;
+  position:relative;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.homeL1 img:nth-child(1){
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+}
+.homeL1 img:nth-child(2){
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  transition: 1s;
+}
+.homeL2{
+  width: 100%;
+  height: 368px;
+  background: #fff;
+  position:relative;
+  overflow: hidden;
+}
+.homeL2 img:nth-child(1){
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+}
+.homeL2 img:nth-child(2){
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  transition: 1s;
+}
+.homeL2:hover img:nth-child(2){
+  transform: scale(1.05);
+}
+.homeL2:hover{
+  cursor: pointer;
+}
+.homeL1:hover img:nth-child(2){
+  transform: scale(1.05);
+}
+.homeL1:hover{
+  cursor: pointer;
+}
+.homeRight{
+  width: 34%;
+  height: 745px;
+  float: right;
+  position:relative;
+  margin-left: 0px;
+  background: #fff;
+  overflow: hidden;
+}
+.homeRight img:nth-child(1){
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+}
+.homeRight img:nth-child(2){
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  transition: 1s;
+}
+.homeRight:hover img:nth-child(2){
+  transform: scale(1.05);
+}
+.homeRight:hover{
+  cursor: pointer;
+}
+/*总的oppo 产品系列*/
+.series{
+  margin-top: 60px;
+  width: 100%;
+}
+/*子OPPO产品系列*/
+.oppoSeries{
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(82, 82, 82);
+}
+.lineL,.lineR{
+  width: 38%;
+  height: 1px;
+  background: rgb(184,184,184);
+  margin: 12px 0;
+}
+/*R 系列*/
+.rSeries{
+  width: 100%;
+  margin-top: 15px;
+}
+/*R系列上面的文字层*/
+.serText{
+  width: 100%;
+  font-size: 18px;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.serTextL span:nth-child(1){
+  margin-right: 20px;
+}
+.serTextL span:nth-child(2){
+  color: rgb(154, 154, 154);
+}
+.serTextR{
+  text-align: right;
+}
+.serTextR a{
+  text-decoration: none;
+  color: #000;
+}
+.serTextR img{
+  width: 18px;
+  height: 18px;
+}
+/*R系列下面的图像层*/
+.serImg{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.serImg1:hover{
+  box-shadow: 3px 3px 3px rgb(200, 200, 200);
+
+}
+.serImg1{
+  width: 24.5%;
+  text-align: center;
+  background: #fff;
+  font-size: 17px;
+
+}
+.serImg1:hover{
+  box-shadow: 5px 10px 20px rgb(225,225,225);
+  transition: all 0.3s ease-in;
+  transform: translateY(-5px);
+}
+.serImg1 a{
+  text-decoration: none;
+}
+.serImg1 img{
+  width: 60%;
+  /*height: 60%;*/
+  margin-top: 19%;
+}
+.serImg1 a p:nth-child(2){
+  color: #000;
+  margin-top: 10%;
+}
+.serImg1 a p:nth-child(3){
+  font-size: 16px;
+  color: rgb(154, 154, 154);
+  padding: 5%;
+  padding-bottom: 13%;
+}
+/*A 系列*/
+.aSeries::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.aSeries .serImg1{
+  float: left;
+
+}
+.aSeriesImg{
+  margin: 0 8px;
+}
+/*Find 系列*/
+.findSeries::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.findSeries .serImg1{
+  float: left;
+}
+/*N 系列*/
+.nSeries::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.nSeries .serImg1{
+  float: left;
+}
+/*产品特色*/
+.oppoFeature{
+  width: 100%;
+  margin-top: 30px;
+}
+.feature{
+  color: rgb(82, 82, 82);
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.featureImg{
+  display: flex;
+  justify-content: space-between;
+}
+
+.featureImg img{
+  width: 49.5%;
+}
+.featureImg a{
+  display: inline-block;
+  width: 49.5%;
+  height: 300px;
+}
+.featureImg a img{
+  width: 100%;
+  height: 100%;
+}
+.featureImg img:nth-child(1){
+  margin-right: 0.5%;
+}
+
+
+
+
+
+/*响应式布局*/
+html{
+  min-width: 1501px;
+}

@@ -1,0 +1,33 @@
+/*回到顶部栏*/
+.navscroll{
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  right: 30px;
+  width: 121px;
+  height: 100px;
+  text-align: right;
+  font-size: 0;
+}
+.navscroll a{
+  display: inline-block;
+  width: 40px;
+  height: 37px;
+}
+.navscroll .back-top{
+  background: rgb(232, 232, 232) url(../../img/product/product/backtop-icon.png) center no-repeat;
+}
+.navscroll .back-top:hover{
+  width: 121px;
+  text-align: right;
+  background: url(../../img/product/product/backtop1.png) center no-repeat;
+}
+.feedback{
+  margin-top: 5px;
+  background: rgb(232, 232, 232) url(../../img/product/product/feedback-icon.png) center no-repeat;
+}
+.navscroll .feedback:hover{
+  width: 121px;
+  text-align: right;
+  background: url(../../img/product/product/feedback1.png) center no-repeat;
+}

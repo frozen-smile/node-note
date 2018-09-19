@@ -1,0 +1,212 @@
+.contentWrap{
+  width: 100%;
+  border-top: 1px solid rgb(221, 221, 221);
+  border-bottom: 1px solid rgb(221, 221, 221);
+  font-size: 0;
+}
+.contentFirstWrap{
+  overflow: hidden;
+  background: url(../../img/colorOs/moveImg/section1_bg.png) repeat-x left bottom;
+}
+.contentFirst{
+  width: 1200px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+/*第二部分内容*/
+.contentSecond{
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.contentSecond > div{
+  display: inline-block;
+}
+.secondBox_1{
+  font-size: 16px;
+}
+.secondBox_1 > div{
+  width: 90px;
+  height: 90px;
+  border-radius: 90px;
+  margin: 40px auto 20px auto;
+}
+.secondImg_1{
+  border: 1px solid #f9c218;
+  background: url(../../img/colorOs/moveImg/section1b_icon.png) -149px top;
+  transition: background-color 0.2s ease-out;
+}
+.secondImg_1:hover{
+  background-color: #f9c218;
+  background-position: -149px bottom;
+}
+.secondImg_2{
+  border: 1px solid #20e7ba;
+  background: url(../../img/colorOs/moveImg/section1b_icon.png) 30px 0;
+  transition: background-color 0.2s ease-out;
+}
+.secondImg_2:hover{
+  background-color: #20e7ba;
+  background-position: 30px bottom;
+}
+.secondImg_3{
+  border: 1px solid #ff8b67;
+  background: url(../../img/colorOs/moveImg/section1b_icon.png) -234px 0;
+  transition: background-color 0.2s ease-out;
+}
+.secondImg_3:hover{
+  background-color: #ff8b67;
+  background-position: -234px bottom;
+}
+.split{
+  width: 1px;
+  height: 55px;
+  margin-top: 58px;
+  background: rgb(217, 217, 217);
+  vertical-align: top;
+}
+.contentSecond > .secondBox_1{
+  width: 300px;
+  margin-bottom: 40px;
+}
+.contentWrap .contentSecond .secondMiddleBox{
+  width: 380px;
+}
+
+/*第三部分内容*/
+.contentThirdWrap{
+  overflow: hidden;
+  height: 740px;
+  background: #fafafa;
+}
+.contentThird{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.contentThird_img{
+  margin-top: 150px;
+}
+.contentThird .text3{
+  position: absolute;
+  left: 580px;
+  top: 130px;
+  width: 600px;
+}
+.text3 h2{
+  font-size: 46px;
+  font-weight: normal;
+  line-height: 60px;
+  margin-bottom: 20px;
+}
+.text3 p{
+  font-size: 18px;
+  line-height: 28px;
+  width: 600px;
+}
+
+/*第四部分内容*/
+.contentFourthWrap{
+  overflow: hidden;
+  height: 740px;
+}
+.contentFourth{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.contentFourth::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+.contentFourth .text3{
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 600px;
+  margin-top: 150px;
+}
+.contentFourth .contentThird_img{
+  float: right;
+}
+
+/*第五部分内容*/
+.contentFifthWrap{
+  overflow: hidden;
+  height: 740px;
+  background: #fafafa;
+}
+.contentFifth{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.contentFifth .text3{
+  position: absolute;
+  left: 580px;
+  top: 130px;
+  width: 600px;
+}
+.text3 h2{
+  font-size: 46px;
+  font-weight: normal;
+  line-height: 60px;
+  margin-bottom: 20px;
+}
+.text3 p{
+  font-size: 18px;
+  line-height: 28px;
+  width: 600px;
+}
+
+/*第六部分内容*/
+.contentSixthWrap{
+  overflow: hidden;
+  height: 770px;
+  position: relative;
+}
+.contentSixth{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.contentSixth::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+.contentSixth .contentThird_img{
+  margin-top: 240px;
+}
+.contentSixth .text3{
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 528px;
+  margin-top: 150px;
+}
+.contentSixth .text3 p{
+  width: 528px;
+}
+.contentSixth .contentThird_img{
+  float: right;
+}
+.contentSixthWrap > .link_a{
+  text-align: center;
+  line-height: 80px;
+  display: block;
+  margin: 0 auto;
+  width: 1200px;
+  font-size: 24px;
+  position: relative;
+  bottom: -270px;
+}
+.link_a a{
+  color: black;
+  text-decoration: none;
+}
+.link_a a:hover{
+  text-decoration: underline;
+}

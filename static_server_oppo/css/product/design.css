@@ -1,0 +1,440 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  min-width: 1500px;
+}
+body{
+  font-size: 0;
+}
+
+header{
+  width: 100%;
+  background: rgba(252, 252, 252, 0.9);
+  font-size: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+nav{
+  width: 1180px;
+  height: 56px;
+  line-height: 56px;
+  margin: 0 auto;
+  position: relative;
+  text-align: left;
+}
+nav img{
+  vertical-align: top;
+  margin-left: 40px;
+  margin-right: 60px;
+}
+nav a{
+  text-align: center;
+  text-decoration: none;
+  color: #a0a0a0;
+  font-size: 16px;
+  display: inline-block;
+  width: 72px;
+}
+nav a:nth-of-type(3){
+  color: black;
+}
+.right{
+  position: absolute;
+  right: 20px;
+  top: 9px;
+}
+.right a:nth-child(1){
+  display: inline-block;
+  width: 97px;
+  font-size: 16px;
+  line-height: 34px;
+  color: #fefefe;
+  background-color: #52a763;
+  border-radius: 4px;
+}
+.right a:nth-last-of-type(1){
+  display: inline-block;
+  width: 133px;
+  color: #fefefe;
+  background-color: #52a763;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 34px;
+  margin-left: 20px;
+}
+
+
+
+/*效果一*/
+@keyframes first {
+  0%{
+    opacity: 0;
+  }
+  45%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  51%{
+    opacity: 1;
+  }
+  95%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0.5;
+  }
+}
+.first{
+  /*width: 2112px;
+  height: auto;
+  left: -306px;*/
+  position: relative;
+}
+.first img{
+  width: 100%;
+  /*height: 100%;*/
+}
+.first img:nth-child(2){
+  animation: first 4s ease infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+/*效果二*/
+
+@keyframes second {
+  0%{
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+.second{
+  /*width: 2112px;
+  left: -266px;
+  background: black;*/
+  text-align: center;
+  position: relative;
+  background: black;
+}
+.second video{
+  width: 65%;
+}
+.secText1{
+  color: white;
+  font-size: 42px;
+  padding-top: 130px;
+  animation: second 1s forwards 1 paused;
+  z-index: 10;
+}
+.secText2{
+  font-size: 16px;
+  color: #9f9f9f;
+  line-height: 28px;
+  padding-top: 36px;
+  letter-spacing: 2px;
+  animation: second 1s forwards 1 paused;
+}
+.second:hover .secText1{
+  animation-play-state: running;
+}
+.second:hover .secText2{
+  animation-play-state: running;
+}
+
+
+
+/*效果三*/
+
+.third{
+  text-align: center;
+  position: relative;
+  /*width: 2112px;
+  height: auto;
+  left: -466px;*/
+}
+.position1{
+  position: absolute;
+  top: 0;
+  left: 23%;
+}
+.title2{
+  font-size: 42px;
+  color: #3c3c3c;
+  font-weight: 400;
+  padding-top: 8%;
+  animation: second 1s forwards 1 paused;
+}
+.third:hover .title2{
+  animation-play-state: running;
+}
+.text2{
+  font-size: 16px;
+  color: #9f9f9f;
+  line-height: 28px;
+  margin-top: 36px;
+  letter-spacing: 2px;
+  animation: second 1s forwards 1 paused;
+}
+.third:hover .text2{
+  animation-play-state: running;
+}
+.third img{
+  width: 100%;
+  height: auto;
+}
+
+
+
+/*效果四*/
+
+.fourth{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+.fourth img{
+  width: 100%;
+  height: auto;
+}
+.text3{
+  position: absolute;
+  bottom: 5%;
+  left: 25%;
+  color: rgb(159, 159, 159);
+
+}
+.title3{
+  color: #fff;
+  font-size: 42px;
+  animation: second 1s forwards 1 paused;
+}
+.fourth:hover .title3{
+  animation-play-state: running;
+}
+.text4{
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  animation: second 1s forwards 1 paused;
+}
+.fourth:hover .text4{
+  animation-play-state: running;
+}
+
+
+
+/*效果五*/
+
+.fifth{
+  position: relative;
+}
+.fifth img:nth-child(1){
+  width: 100%;
+  height: auto;
+}
+.position2{
+  position: absolute;
+  top: 10.25%;
+  left: 25.15625%;
+  width: 35.625%;
+  opacity: 0;
+  transition: opacity .5s ease 1s;
+}
+.fifth:hover .position2{
+  opacity: 1;
+}
+.position3{
+  position: absolute;
+  top: 50.044%;
+  left: 25.43%;
+  width: 1.21%;
+  opacity: 0;
+  transition: opacity .5s ease 1s;
+}
+.fifth:hover .position3{
+  opacity: 1;
+}
+.position4{
+  position: absolute;
+  top: 64.58%;
+  left: 31.29%;
+  width: 1.02%;
+  opacity: 0;
+  transition: opacity .5s ease 1s;
+}
+.fifth:hover .position4{
+  opacity: 1;
+}
+.text5{
+  position: absolute;
+  bottom: 1%;
+  left: 30%;
+  z-index: 50;
+  color: rgb(159, 159, 159);
+  text-align: center;
+  animation: second 1s forwards 1 paused;
+}
+.title4{
+  font-size: 42px;
+  color: #fff;
+}
+.text6{
+  margin-top: 5%;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 2px;
+}
+.bottom{
+  font-size: 12px;
+  margin-top: 5%;
+}
+.fifth:hover .text5{
+  animation-play-state: running;
+}
+
+
+/*效果六*/
+.sixth{
+  position: relative;
+}
+.sixth img{
+  width: 100%;
+}
+.sixthText1{
+  font-size: 42px;
+  color: white;
+}
+.sixthText2{
+  font-size: 16px;
+  color: rgb(159, 159, 159);
+  margin-top: 5%;
+}
+.sixText{
+  position: absolute;
+  bottom: 10%;
+  left: 24%;
+  text-align: center;
+  animation: second 1s forwards 1 paused;
+}
+.sixth:hover .sixText{
+  animation-play-state: running;
+}
+
+
+/*效果七*/
+.seventh{
+  position: relative;
+  width: 100%;
+  height: 360px;
+}
+.seventh img{
+  width: 100%;
+  height: 360px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.last{
+  position: absolute;
+  left: 10px;
+  top: 120px;
+  z-index: 50;
+}
+.seventh p{
+  font-size: 36px;
+  padding-bottom: 10px;
+  font-weight: lighter;
+}
+.seventh a{
+  text-decoration: none;
+  font-size: 18px;
+  color: #787878;
+  font-weight: lighter;
+}
+.next{
+  text-align: right;
+  position: absolute;
+  right: 10px;
+  top: 120px;
+  z-index: 50;
+}
+
+.mask1{
+  width: 100%;
+  height: 180px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  transition: 0.8s;
+}
+.seventh:hover .mask1{
+  height: 0;
+}
+.mask2{
+  width: 100%;
+  height: 180px;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  transition: 0.8s;
+}
+.seventh:hover .mask2{
+  height: 0;
+}
+.seventh:hover p{
+  color: #fff;
+}
+.seventh:hover a{
+  color: #fff;
+}
+
+
+
+/*第八个块*/
+.eight{
+  width: 100%;
+  height: 300px;
+  background: white;
+}
+.eighText{
+  width: 1180px;
+  margin: 0 auto;
+  padding-top: 100px;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+.eighText p{
+  margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
+.hu{
+
+}

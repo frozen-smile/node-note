@@ -1,0 +1,12 @@
+.nextPage a:nth-child(2){
+  background: #fff;
+  color: #2aad6f;
+}
+.nextPage a:hover{
+  background: #2aad6f;
+  color: #fff;
+}
+.nextPage a:nth-child(3){
+  background: #2aad6f;
+  color: #fff;
+}

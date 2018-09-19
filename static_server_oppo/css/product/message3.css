@@ -1,0 +1,131 @@
+.contL{
+  padding: 20px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+.contL:hover{
+  box-shadow: 3px 3px 5px #b7b7b7;  
+}
+.contL h2{
+  display: inline-block;
+  color: #000;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #393939;
+}
+.contL p{
+  font-size: 17px;
+  line-height: 20px;
+  text-indent: 34px;
+  color: #393939;
+  text-align:inherit;
+  margin-bottom: 20px;
+}
+.contL .imgs{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+/*预约*/
+.contL .order{
+  width: 100%;
+ text-align: center;
+ margin-bottom: 20px;
+}
+.order a{
+  display: inline-block;
+  text-decoration: none;
+  width: 30%;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  background: #d4eee1;
+ border: 2px solid transparent;
+ font-size: 20px;
+ font-weight: bold;
+  color: #1f8657;
+}
+.order a:hover{
+  color: #fff;
+  background: #1f8657;
+}
+/*预约方式*/
+.way{
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.way span{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+.way1{
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  display: inline-block;
+}
+.way1 span{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.way1 img{
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  top: -150px;
+  left: 250px;
+  display: none;
+}
+.way1 span{
+  background: url(../../img/product/message/icon-blog-revision.png) 0 -100px no-repeat;
+}
+.way1 span:hover{
+  cursor: pointer;
+  background: url(../../img/product/message/icon-blog-revision.png) -0 -150px no-repeat;
+}
+.way1:hover img{
+  display: block;
+}
+.way span:nth-last-of-type(2){
+  background: url(../../img/product/message/icon-blog-revision.png) -50px -100px no-repeat;
+}
+.way span:nth-last-of-type(2):hover{
+  cursor: pointer;
+  background: url(../../img/product/message/icon-blog-revision.png) -50px -150px no-repeat;
+}
+
+.way span:nth-last-of-type(1){
+  background: url(../../img/product/message/icon-blog-revision.png) -100px -100px no-repeat;
+}
+.way span:nth-last-of-type(1):hover{
+  cursor: pointer;
+  background: url(../../img/product/message/icon-blog-revision.png) -100px -150px no-repeat;
+}
+
+/*最后一行*/
+.last{
+  width: 100%;
+  text-align:inherit;
+}
+.last::after{
+  content: "";
+  display: inline-block;
+  clear: both;
+}
+.last a{
+  text-decoration: none;
+  color: #1f8657;
+
+}
+
+.last a:nth-child(1){
+  float: left;
+}
+.last a:nth-child(2){
+  float: right;
+}

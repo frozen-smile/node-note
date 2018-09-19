@@ -1,0 +1,487 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/*头部*/
+
+header {
+    width: 100%;
+    height: 135px;
+    margin: 0 auto;
+}
+
+/*上导航*/
+
+.nav1 {
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    background: rgb(0, 155, 114);
+}
+.navTop {
+    width: 1180px;
+    text-align: right;
+    color: rgb(232, 242, 246);
+    padding: 0;
+    font-size: 0px;
+    margin: 0 auto;
+}
+.navTop span {
+    font-size: 13px;
+    border-left: 1px solid rgb(71, 180, 136);
+    padding: 6px 16px;
+}
+.navTop span:hover {
+    background: rgb(73, 167, 115);
+    cursor: pointer;
+}
+
+/*下导航*/
+
+.nav2 {
+    width: 1180px;
+    height: 80px;
+    line-height: 80px;
+    background: #fff;
+    text-align: center;
+    margin: 0 auto;
+}
+.navBottom {
+    width: 98%;
+    padding: 0;
+    font-size: 0px;
+    margin: 0 auto;
+    text-align: right;
+}
+.navBottom::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.navBottom img {
+    float: left;
+    padding: 30px 0;
+}
+.navBottom a {
+    text-decoration: none;
+    font-size: 16px;
+    color: gray;
+    margin: 0 20px;
+    padding-bottom: 5px;
+}
+.navBottom a:nth-of-type(3) {
+    border-bottom: 2px solid rgb(42, 173, 111);
+}
+.navBottom a:hover {
+    color: black;
+    cursor: pointer;
+}
+.navBottom a:nth-of-type(8) {
+  position: relative;
+}
+.navBottom .car{
+  display: inline-block;
+  width: 36px;
+  height: 38px;
+  background: url(../../img/shop/bg.png) -128px -144px no-repeat;
+}
+.navBottom sup{
+  display: inline-block;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  font-weight: bold;
+  line-height: 35px;
+  background: rgb(57, 160, 88);
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -25px;
+  right: -20px;
+  border-radius: 30px;
+}
+
+
+/*内容部分*/
+
+.content{
+  width: 100%;
+
+}
+
+.nav3{
+  width: 1180px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: rgb(133, 133, 133);
+  padding: 19px 0;
+}
+.nav3 a{
+  color: rgb(133, 133, 133);
+  text-decoration: none;
+}
+.contentTop{
+  width: 1180px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.contentTop img{
+  margin-right: 120px;
+  padding: 20px 0;
+  cursor: pointer;
+}
+.the_one{
+  height: 30px;
+}
+.the_one span:nth-of-type(1){
+  display: inline-block;
+  width: 168px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  color: #393939;
+}
+.the_one span:nth-of-type(n+2){
+  color: rgb(225, 225, 225);
+}
+
+.the_one a{
+  display: inline-block;
+  text-decoration: none;
+  height: 20px;
+  padding: 0 10px;
+  color: #757575;
+  line-height: 20px;
+  font-size: 16px;
+  margin: 0 10px;
+}
+.the_one a:nth-of-type(1){
+  color: white;
+  background: #2aad6f;
+}
+
+/*内容下部分*/
+.contentBottom{
+  width: 100%;
+  background: #ededed;
+}
+.nav4{
+  width: 1180px;
+  margin: 0 auto;
+  text-align: right;
+  padding: 20px 0;
+  cursor: pointer;
+  font-size: 17px;
+  color: #393939;
+}
+.nav4 span{
+  margin-left: 20px;
+}
+.nav4 span:nth-child(1){
+  color: #1f8657;
+}
+.waterFloor{
+  width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  /*background: white;*/
+}
+.cell{
+  box-sizing: border-box;
+  width: 25%;
+  border: 1px solid #ededed;
+  text-align: center;
+  background: white;
+  padding: 14px;
+  position: relative;
+}
+.bg{
+  width: 90%;
+  padding: 30px 0;
+}
+.cell p:nth-of-type(1){
+  height: 38px;
+  cursor: pointer;
+}
+.cell p:nth-of-type(2){
+  margin-top: 26px;
+  color: #1f8657;
+  font-weight: 600;
+  font-size: 18px;
+}
+.content .waterFloor .cell .color{
+  color: #f30;
+}
+.rightTop{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.cell s{
+  position: absolute;
+  bottom: 40px;
+  left: 41%;
+  font-size: 12px;
+}
+
+/*控制点*/
+.control{
+  background: #ededed;
+  text-align: center;
+  padding: 30px 0;
+}
+.control a{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 50px;
+  margin-right: 13px;
+  background: white;
+  color: #1f8657;
+}
+.control a:nth-child(3){
+  background: #2aad6f;
+  color: white;
+}
+.control a:hover{
+  color: white;
+  background: #2aad6f;
+}
+
+
+
+
+/*尾部*/
+
+footer {
+    width: 100%;
+    background: rgb(246, 246, 246);
+    padding-bottom: 60px;
+}
+
+.bottom1 {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 70px;
+    border-bottom: 1px solid rgb(207, 207, 207);
+    padding-bottom: 30px;
+}
+.bottom1::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.bottom1 ul {
+    float: left;
+    list-style: none;
+    margin-right: 11%;
+}
+footer .bottom1 .title {
+    font-size: 17px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+.bottom1 ul li {
+    margin: 10px 0;
+    font-size: 15px;
+    color: rgb(57, 57, 57);
+    cursor: pointer;
+}
+.bottom1 ul a{
+  text-decoration: none;
+}
+.bottom1Right {
+    float: right;
+    text-align: center;
+}
+.bottom1Right img{
+  cursor: pointer;
+}
+.bottom1Right p:nth-of-type(1) {
+    font-size: 30px;
+    color: rgb(57, 57, 57);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.bottom1Right p:nth-of-type(1) {
+    color: rgb(57, 57, 57);
+}
+
+/*尾部第二行*/
+
+.bottom2 {
+    width: 95%;
+    height: 32px;
+    margin: 0 auto;
+    margin-top: 30px;
+    position: relative;
+}
+.bottom2::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*第二行左边*/
+
+.bottom2Left {
+    display: inline-block;
+    font-size: 13px;
+    color: gray;
+    line-height: 25px;
+}
+.guohui {
+    width: 24px;
+    height: 25px;
+    line-height: 25px;
+    display: inline-block;
+    background: url(../../img/icon-identification.png) 0 0;
+    vertical-align: middle;
+}
+.guohui:hover {
+    background: url(../../img/icon-identification.png) 24px 0;
+    cursor: pointer;
+}
+
+/*第二行右边*/
+
+.bottom2Right {
+    float: right;
+}
+.bottom2Right span {
+    display: inline-block;
+    color: gray;
+    font-size: 14px;
+    line-height: 32px;
+    vertical-align: top;
+}
+.weibo {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url(../../img/weibo1.png);
+}
+.weixin {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url(../../img/weixin1.png);
+    position: relative;
+}
+.aliPay {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url(../../img/aliPay1.png);
+    position: relative;
+}
+
+/*二维码*/
+
+.qrcode-wx {
+    width: 148px;
+    height: 211px;
+    background: url(../../img/qrcode-wx.jpg);
+    position: absolute;
+    top: -215px;
+    left: -58px;
+    display: none;
+}
+.qrcode-fwc {
+    width: 148px;
+    height: 211px;
+    background: url(../../img/qrcode-fwc.jpg);
+    position: absolute;
+    top: -215px;
+    left: -58px;
+    display: none;
+}
+
+/*hover效果*/
+
+.weibo:hover {
+    cursor: pointer;
+    background: url(../../img/weibo2.png);
+}
+.weixin:hover {
+    cursor: pointer;
+    background: url(../../img/weinxin2.png);
+}
+.weixin:hover .qrcode-wx {
+    display: block;
+}
+.aliPay:hover {
+    cursor: pointer;
+    background: url(../../img/aliPay2.png);
+}
+.aliPay:hover .qrcode-fwc {
+    display: block;
+}
+
+
+/*在线咨询*/
+.ask{
+  width: 100%;
+}
+.ask img{
+  position: fixed;
+  top: 45%;
+  right: 35px;
+  cursor: pointer;
+}
+
+/*回到顶部栏*/
+.navscroll{
+  position: fixed;
+  bottom: 0;
+  right: 35px;
+  width: 121px;
+  height: 100px;
+  text-align: right;
+  font-size: 0;
+}
+.navscroll a{
+  display: inline-block;
+  width: 40px;
+  height: 37px;
+}
+.navscroll .back-top{
+  background: rgb(232, 232, 232) url(../../img/backtop-icon.png) center no-repeat;
+}
+.navscroll .back-top:hover{
+  width: 121px;
+  text-align: right;
+  background: url(../../img/backtop1.png) center no-repeat;
+}
+.feedback{
+  margin-top: 5px;
+  background: rgb(232, 232, 232) url(../../img/feedback-icon.png) center no-repeat;
+}
+.navscroll .feedback:hover{
+  width: 121px;
+  text-align: right;
+  background: url(../../img/feedback1.png) center no-repeat;
+}
+
+@media only screen and (min-width:1350px) and (max-width:1500px) {
+  .bottom1{
+    width: 80%;
+  }
+  .bottom2{
+    width: 80%;
+  }
+}
+@media only screen and (min-width:1500px) {
+  .bottom1{
+    width: 70%;
+  }
+  .bottom2{
+    width: 70%;
+  }
+}

@@ -1,0 +1,396 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.wrap{
+  width: 100%;
+  background: rgb(241, 241, 241);
+}
+
+/*头部*/
+header{
+  width: 100%;
+  background: white;
+}
+
+/*顶部导航*/
+.navTop{
+  width: 1095px;
+  height: 70px;
+  padding-top: 25px;
+  margin: 0 auto;
+  text-align: right;
+  position: relative;
+}
+.logo{
+  position: absolute;
+  left: 0;
+  top: 25px;
+}
+.navTop a{
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  margin-left: 15px;
+  vertical-align: bottom;
+  margin-top: 50px;
+  line-height: 70px;
+}
+.more{
+  display: inline-block;
+  position: relative;
+
+}
+.hidden{
+  font-size: 15px;
+  text-align: center;
+  width: 90px;
+  box-shadow: 0 0 5px gray;
+  border-radius: 2px;
+  padding: 10px 12px;
+  z-index: 10;
+  line-height: 30px;
+  background: rgb(253, 253, 253);
+  position: absolute;
+  top: 10px;
+  right: -13px;
+  display: none;
+}
+.hidden p:nth-child(1){
+  border-bottom: 1px solid rgb(232, 232, 232);
+  padding-bottom: 12px;
+}
+.more:hover .hidden{
+  display: block;
+}
+.hidden p:hover{
+  color: #09d1a9;
+  cursor: pointer;
+}
+header .navTop .more .hidden a{
+  text-align: center;
+  line-height: 30px;
+  margin-left: 0;
+}
+.hidden a:hover{
+  color: #09d1a9;
+}
+
+
+/*导航下部*/
+.navBottom{
+  width: 1095px;
+  height: 55px;
+  margin: 0 auto;
+  position: relative;
+  font-size: 0;
+}
+.navBottom a{
+  display: inline-block;
+  width: 125px;
+  height: 44px;
+  font-size: 17px;
+  line-height: 44px;
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+  font-weight: 400;
+}
+.navBottom a:hover{
+  color: #09d1a9;
+}
+.search{
+  display: inline-block;
+  background: white;
+  width: 330px;
+  height: 33px;
+  margin-left: 10px;
+  outline: none;
+  border: 1px solid rgb(0, 190, 170);
+  border-radius: 4px;
+}
+.input{
+  width: 260px;
+  margin: 10px;
+  outline: none;
+  border: none;
+}
+.search img{
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  cursor: pointer;
+}
+
+
+/*内容*/
+.content{
+  width: 1095px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 22px;
+}
+.content:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*内容左侧*/
+.left{
+  width: 750px;
+  float: left;
+}
+
+/*第一行*/
+.l1{
+  width: 100%;
+  height: 65px;
+  padding: 15px 0;
+  background: white;
+}
+.l1::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.l1Left{
+  width: 374px;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+}
+.l1Right{
+  width: 374px;
+  display: inline-block;
+  float: right;
+  text-align: center;
+  cursor: pointer;
+}
+.download{
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+  background: url(../../img/serve/download/chanpinicon.png) 0 -538px;
+}
+.update{
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+  background: url(../../img/serve/download/chanpinicon.png) 0 -651px;
+}
+.text{
+  line-height: 65px;
+  vertical-align: top;
+  margin-left: 15px;
+  font-size: 18px;
+}
+.middle{
+  padding-top: 15px;
+}
+
+
+/*左边第二行*/
+.l2{
+  margin-top: 10px;
+  background: white;
+  padding-top: 25px;
+}
+.l2::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.l2 p{
+  float: left;
+  margin: 0 0 10px 15px;
+  width: 98px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  font-weight: bold;
+}
+.l2 p:nth-child(1){
+  background: #09D1A9;
+  color: white;
+  border-color: #09d1a9;
+  cursor: pointer;
+  margin-left: 30px;
+}
+.l2 p:nth-child(n+2):hover{
+  background: #09D1A9;
+  color: white;
+  border-color: #09d1a9;
+  cursor: pointer;
+}
+
+/*左边第三行*/
+
+.l3{
+  width: 750px;
+  /*margin: 0 auto;*/
+  background: white;
+  padding-top: 35px;
+}
+.l3::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.cell{
+  width: 235px;
+  text-align: center;
+  font-size: 13px;
+  color: gray;
+  padding-bottom: 30px;
+  float: left;
+  cursor: pointer;
+}
+.cell p{
+  margin-top: 10px;
+}
+.cell:nth-child(3n+1){
+  margin-left: 22.5px;
+}
+.cell:hover p{
+  color: #09d1a9;
+}
+
+
+
+/*右边内容*/
+
+.right{
+  width: 335px;
+  float: right;
+}
+.r1{
+  width: 285px;
+  padding: 10px 25px;
+  background: white;
+}
+.r1 p:nth-child(1){
+  font-size: 16px;
+  line-height: 38px;
+}
+.r1 p{
+  font-size: 14px;
+  line-height: 34px;
+}
+.r1 p:nth-child(n+2):hover{
+  color: #09d1a9;
+  cursor: pointer;
+}
+/*右边第二行*/
+.r2{
+  margin-top: 10px;
+}
+
+
+/*下边内容*/
+
+.bottom{
+  width: 1095px;
+  margin: 0 auto;
+}
+.bottom p{
+  background: white;
+  display: block;
+  height: 40px;
+  color: #4C4C4C;
+  line-height: 40px;
+  text-indent: 12px;
+  font-size: 18px;
+}
+.xia{
+  height: 40px;
+  background: white;
+  margin-top: 1px;
+}
+.xia a{
+  text-decoration: none;
+  color: #B9B9B9;
+  font-size: 13px;
+  margin-left: 12px;
+}
+
+
+/*页脚*/
+footer{
+  text-align: center;
+  width: 1095px;
+  margin: 0 auto;
+  background: white;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 26px;
+  padding: 20px 0;
+  font-size: 12px;
+  background: #FFF;
+  color: #9F9F9F;
+}
+footer a{
+  text-decoration: none;
+  color: #9F9F9F;
+}
+footer a:hover{
+  color: #09d1a9;
+}
+
+/*回到顶部*/
+.fixd{
+  position: fixed;
+  right: 35px;
+  bottom: 102px;
+}
+.jiantou{
+  width: 45px;
+  height: 37px;
+  background: url(../../img/serve/download/scrolltop.png) -1px -122px white;
+}
+.weixin{
+  width: 45px;
+  height: 37px;
+  background: url(../../img/serve/download/scrolltop.png) -1px -160px;
+  margin-top: 1px;
+  position: relative;
+}
+.weibo{
+  width: 45px;
+  height: 37px;
+  margin-top: 1px;
+  background: url(../../img/serve/download/scrolltop.png) 0px -205px;
+}
+.color{
+  width: 230px;
+  position: absolute;
+  left: -231px;
+  top: -96.5px;
+  display: none;
+}
+.jiantou:hover{
+  cursor: pointer;
+  background: url(../../img/serve/download/scrolltop.png) -91px -122px white;
+}
+.weixin:hover{
+  cursor: pointer;
+  background: url(../../img/serve/download/scrolltop.png) -89px -160px white;
+}
+.weibo:hover{
+  cursor: pointer;
+  background: url(../../img/serve/download/scrolltop.png) -89px -205px white;
+}
+.weixin:hover .color{
+  display: block;
+}
+
+
+
+
+.hu{
+
+}

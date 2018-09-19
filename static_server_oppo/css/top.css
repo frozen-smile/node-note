@@ -1,0 +1,32 @@
+/*回到顶部栏*/
+.navscroll{
+  position: fixed;
+  bottom: 0;
+  right: 35px;
+  width: 121px;
+  height: 100px;
+  text-align: right;
+  font-size: 0;
+}
+.navscroll a{
+  display: inline-block;
+  width: 40px;
+  height: 37px;
+}
+.navscroll .back-top{
+  background: rgb(232, 232, 232) url(../img/backtop-icon.png) center no-repeat;
+}
+.navscroll .back-top:hover{
+  width: 121px;
+  text-align: right;
+  background: url(../img/backtop1.png) center no-repeat;
+}
+.feedback{
+  margin-top: 5px;
+  background: rgb(232, 232, 232) url(../img/feedback-icon.png) center no-repeat;
+}
+.navscroll .feedback:hover{
+  width: 121px;
+  text-align: right;
+  background: url(../img/feedback1.png) center no-repeat;
+}

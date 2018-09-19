@@ -1,0 +1,37 @@
+.scroll a:nth-child(3){
+  background: #2aad6f;
+  color: #fff;
+}
+.scroll a:nth-child(2){
+  background: #fff;
+  color: #2aad6f;
+}
+/*14*/
+.img14{
+  width: 24.93%;
+  float: left;
+}
+.img14 a{
+  text-decoration: none;
+  color: #000;
+}
+.img14 a p{
+  margin-top: 40px;
+  margin-bottom: 90px;
+}
+/*17*/
+.img17{
+  background: url(../../img/product/accessory/promotion.png) right top no-repeat;
+  border-top: none;
+}
+/*第二页图片的下边框*/
+.line01_1{
+  border-bottom: 1px solid #e0e0e0;
+}
+/*16*/
+.img16 img{
+  display: inline-block;
+  width: 69%;
+  height: 60%;
+  padding-top: 1px;
+}

@@ -1,0 +1,161 @@
+footer{
+  margin-top: 20px;
+  width: 100%;
+  background: rgb(246, 246, 246);
+  padding-bottom: 60px;
+}
+
+.bottom1{
+  width: 1220px;
+  margin: 0 auto;
+  padding-top: 70px;
+  border-bottom: 1px solid rgb(207, 207, 207);
+  padding-bottom: 30px;
+}
+.bottom1::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.bottom1 ul{
+  float: left;
+  list-style: none;
+  margin-right: 11%;
+}
+footer .bottom1 .title{
+  font-size: 17px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.bottom1 ul li{
+  margin: 10px 0;
+  font-size: 15px;
+  color: rgb(57, 57, 57);
+}
+.bottom1 ul li a{
+  text-decoration: none;
+  color: rgb(57, 57, 57);
+}
+.bottom1Right{
+  float: right;
+  text-align: center;
+}
+.bottom1Right p:nth-of-type(1){
+  font-size: 30px;
+  color: rgb(57, 57, 57);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.bottom1Right p:nth-of-type(1){
+  color: rgb(57, 57, 57);
+}
+
+
+/*尾部第二行*/
+.bottom2{
+  width: 1220px;
+  height: 32px;
+  margin: 0 auto;
+  margin-top: 30px;
+  position: relative;
+  /*border: 1px solid green;*/
+}
+.bottom2::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*第二行左边*/
+.bottom2Left{
+  display: inline-block;
+  font-size: 13px;
+  color: gray;
+  line-height: 32px;
+}
+.guohui{
+  width: 24px;
+  height: 25px;
+  line-height: 25px;
+  display: inline-block;
+  background: url(../../img/product/product/icon-identification.png) 0 0;
+  vertical-align: middle;
+}
+.guohui:hover{
+  background: url(../../img/product/product/icon-identification.png) 24px 0;
+  cursor: pointer;
+}
+
+
+/*第二行右边*/
+.bottom2Right{
+  float: right;
+}
+.bottom2Right span{
+  display: inline-block;
+  color: gray;
+  font-size: 14px;
+  line-height: 32px;
+  vertical-align: top;
+}
+.weibo{
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background: url(../../img/product/product/weibo1.png);
+}
+.weixin{
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background: url(../../img/product/product/weixin1.png);
+  position: relative;
+}
+.aliPay{
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background: url(../../img/product/product/aliPay1.png);
+  position: relative;
+}
+
+/*二维码*/
+.qrcode-wx{
+  width: 148px;
+  height: 211px;
+  background: url(../../img/product/product/qrcode-wx.jpg);
+  position: absolute;
+  top: -215px;
+  left: -58px;
+  display: none;
+}
+.qrcode-fwc{
+  width: 148px;
+  height: 211px;
+  background: url(../../img/product/product/qrcode-fwc.jpg);
+  position: absolute;
+  top: -215px;
+  left: -58px;
+  display: none;
+}
+
+
+/*hover效果*/
+.weibo:hover{
+  cursor: pointer;
+  background: url(../../img/product/product/weibo2.png);
+}
+.weixin:hover{
+  cursor: pointer;
+  background: url(../../img/product/product/weinxin2.png);
+}
+.weixin:hover .qrcode-wx{
+  display: block;
+}
+.aliPay:hover{
+  cursor: pointer;
+  background: url(../../img/product/product/aliPay2.png);
+}
+.aliPay:hover .qrcode-fwc{
+  display: block;
+}

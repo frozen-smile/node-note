@@ -1,0 +1,335 @@
+html{
+  min-width: 1700px;
+  font-size: 0;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+header{
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  /*left: 0;*/
+  background: rgba(243, 243, 243, 0.9);
+  z-index: 90;
+  text-align: center;
+
+}
+.logo{
+  vertical-align: middle;
+  margin-right: 20px;
+}
+nav{
+  width: 750px;
+  display: inline-block;
+}
+nav a{
+  text-decoration: none;
+  color: rgb(155, 155, 155);
+  line-height: 60px;
+  font-size: 15px;
+  padding: 0 10px 0 10px;
+}
+nav a:nth-of-type(4){
+  color: black;
+}
+nav a:hover{
+  color: black;
+}
+input{
+  outline: none;
+  border: none;
+  background: rgb(79, 160, 95);
+  padding: 6px 18px 6px 18px;
+  border-radius: 3px;
+  color: white;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.wrap img{
+font-size: 0;
+}
+.first{
+  height: 942px;
+  position: relative;
+}
+.first img:nth-child(2){
+  position: absolute;
+  top: 0;
+  left: 0px;
+  /*z-index: 2;*/
+}
+.card{
+  width: 444px;
+  height: 225px;
+  /*z-index: 4;*/
+  position: absolute;
+  top:  35%;
+  left: 60%;
+}
+.card:hover{
+  transform: translateY(30px);
+  transition: 3s;
+}
+.circle{
+  width: 826.2px;
+
+}
+.circle_1{
+position: absolute;
+top: 30%;
+right: 20%;
+animation: cirMov 10s linear infinite;
+}
+.circle_2{
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  animation: cirMov 0.00000000001s linear infinite;
+}
+.circle_3{
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  animation: cirMov 6s linear infinite;
+}
+.circle_4{
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  animation: cirMov 4s linear infinite;
+}
+.circle_5{
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  animation: cirMov 2s linear infinite;
+}
+
+@-webkit-keyframes cirMov{
+  0%{
+      opacity: 1;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+  }
+  50%{
+      opacity: 0.7;
+      -webkit-transform: scale(0.5,0.5);
+      transform: scale(0.5,0.5);
+  }
+  60%{
+    opacity: 0.5;
+    -webkit-transform: scale(0.7,0.7);
+    transform: scale(0.7,0.7);
+  }
+  70%{
+    opacity: 0.3;
+    -webkit-transform: scale(1.2,1.2);
+    transform: scale(1.2,1.2);
+  }
+  100%{
+      opacity: 0;
+      -webkit-transform: scale(1.5,1.5);
+      transform: scale(1.5,1.5);
+  }
+}
+/**/
+ .title{
+  font-size: 35px;
+  text-align: center;
+  color: rgb(60, 60, 60);
+}
+.text{
+  margin-top: 36px;
+  text-align: center;
+  font-size: 15px;
+  color: rgb(158, 158, 158);
+  letter-spacing: 2px;
+  line-height: 32px;
+}
+.second{
+  text-align: center;
+}
+.second::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.second img{
+  width: 100%;
+  width: 70px;
+  height: 71px;
+  z-index: 5;
+}
+
+.icon{
+  display: inline-block;
+  padding-top: 45px;
+  padding-left: 40px;
+}
+.icon p{
+  margin-top: 20px;
+  color: rgb(158, 158, 158);
+}
+.three{
+  width: 100%;
+  height: 1241px;
+  position: relative;
+}
+.three img:nth-child(1){
+  position: absolute;
+  top: 0;
+  left: 13.32%;
+}
+.three img:nth-child(2){
+  position: absolute;
+  top: 7.92%;
+  left: 57.125%;
+}
+.three img:nth-child(2):hover{
+  transform: translateY(50px);
+  transition:  5s;
+}
+.zoom{
+  background: black;
+}
+
+
+.fouth{
+  width: 100%;
+  position: relative;
+}
+.fouth img{
+  width: 100%;
+  font-size: 0;
+}
+.fouth_1{
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  left: 30%;
+}
+.title_1{
+  font-size: 35px;
+  color: white;
+}
+
+
+.fifth{
+  position: relative;
+}
+.fifth img{
+  font-size: 0;
+}
+.fifth_1{
+  position: absolute;
+  left: 30%;
+  bottom: 10px;
+}
+
+
+.sixth img{
+width: 100%;
+}
+.seven{
+  width: 100%;
+  height: 360px;
+  position: relative;
+  font-size: 18px;
+}
+.seven a{
+  text-decoration: none;
+  color: black;
+}
+.left{
+  color: black;
+  padding-bottom: 20px;
+  position: absolute;
+  top: 150px;
+  left: 10px;
+  z-index: 30;
+}
+.left p:nth-of-type(1){
+  font-size: 30px;
+}
+
+.right{
+  text-align: right;
+  color: rgb(61, 61, 61);
+  padding-top: 20px;
+  position: absolute;
+  bottom: 150px;
+  right: 10px;
+  z-index: 30;
+}
+.right p:nth-child(1){
+  font-size: 30px;
+}
+
+.do{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mask1{
+  width: 100%;
+  height: 180px;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  z-index: 20;
+}
+.mask2{
+  width: 100%;
+  height: 180px;
+  background: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 1s;
+  z-index: 20;
+}
+.seven:hover .mask1{
+  height: 0;
+}
+.seven:hover .mask2{
+  height: 0;
+}
+.seven:hover p{
+  color: white;
+}
+.seven:hover .do{
+  display: block;
+}
+.seven:hover a{
+  color: white;
+}
+.eight{
+  width: 1182px;
+  margin: 0 auto;
+  font-size: 12px;
+  color: rgb(198, 198, 198);
+  padding: 100px 50px 100px 50px;
+  line-height: 17px;
+}
+.eight p{
+  margin-bottom: 20px;
+}
+@media only screen and (min-width:1700px) and (max-width:1800px) {
+   .card{
+     position: absolute;
+     top: 38%;
+     left: 65%;
+   }
+  .three img:nth-child(2){
+    position: absolute;
+    top: 6%;
+    left: 60%;
+  }
+}

@@ -1,0 +1,363 @@
+.wrap{
+  background: rgb(246, 246, 246);
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+/*头部*/
+header{
+  width: 100%;
+  margin: 0 auto;
+}
+/*上导航*/
+.nav1{
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  background: rgb(33, 157, 113);
+}
+.navTop{
+  width: 1220px;
+  text-align: right;
+  color: #fff;
+  padding: 0;
+  font-size: 0px;
+  margin: 0 auto;
+
+}
+.navTop span{
+  font-size: 14px;
+  border-left: 1px solid rgb(73, 167, 115);
+  padding: 6px 16px;
+}
+.navTop span:hover{
+  background: rgb(73, 167, 115);
+  cursor: pointer;
+}
+/*下导航*/
+.nav2{
+  width: 100%;
+  height:80px;
+  line-height: 80px;
+  background: #fff;
+  text-align: center;
+}
+.navBottom{
+  width: 1220px;
+  padding: 0;
+  font-size: 0px;
+  margin: 0 auto;
+  text-align: right;
+}
+.navBottom::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.navBottom img{
+  float: left;
+  padding: 30px;
+  padding-left: 0px;
+}
+.navBottom a{
+  text-decoration: none;
+  font-size: 16px;
+  color: rgb(154,154,154);
+  margin: 0 20px;
+  padding-bottom: 5px;
+}
+.navBottom a:hover{
+  cursor: pointer;
+  color: #000;
+}
+/*内容部分*/
+.content{
+  width: 1200px;
+  margin: 0 auto;
+}
+/*内容导航*/
+.contNav{
+  width: 100%;
+  padding: 30px 0;
+}
+.contNav a{
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-size: 17px;
+  padding: 10px 35px;
+}
+.contNav a:hover{
+  background: rgb(73, 165, 115);
+  border-radius: 2px;
+  color: #fff;
+}
+.contNav a:nth-child(1){
+  background: rgb(73, 165, 115);
+  border-radius: 2px;
+  color: #fff;
+}
+/*内容图片*/
+.contAll{
+  width: 100%;
+}
+.contAll::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+/*内容左边图片部分*/
+.contL{
+  width: 60%;
+  float: left;
+}
+/*左边第一个*/
+.left1{
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  margin-bottom: 20px;
+  transition: 0.1s;
+}
+.left1:hover{
+  box-shadow: 3px 3px 5px rgb(211, 211, 211);
+}
+.left1 h2{
+  padding-bottom: 15px;
+}
+.left1 h2 a{
+  color: #000;
+  text-decoration: none;
+}
+.left1 h2 a:hover{
+  text-decoration: underline;
+}
+.news{
+  width: 100%;
+  height: 23px;
+  margin-bottom: 20px;
+  line-height: 23px;
+  font-size: 0;
+}
+.news span{
+  color: #7b7b7b;
+  font-size: 14px;
+  display: inline-block;
+}
+.news span:nth-child(1){
+  width:67px;
+  height: 23px;
+  line-height: 23px;
+  background: #e44f50;
+  border-radius: 2px;
+  text-align: center;
+}
+.news span:nth-child(1) a{
+  color: #fff;
+  text-decoration: none;
+}
+.news span:nth-child(2){
+  padding-left: 20px;
+}
+.news span:nth-child(3){
+  margin-left: 300px;
+  margin-right: 2px;
+  width: 25px;
+  height: 17px;
+  background: url(../../img/product/message/icon-blog-revision.png) 0px -26px no-repeat;
+}
+.news span:nth-child(5){
+  width: 25px;
+  height: 17px;
+  margin:0 2px;
+  background: url(../../img/product/message/icon-blog-revision.png) -28px -28px no-repeat;
+}
+.news span:nth-child(5):hover{
+  background: url(../../img/product/message/icon-blog-revision.png) -29px -53px no-repeat;
+  cursor: pointer;
+}
+.news span:nth-child(7){
+  width: 17px;
+  height: 19px;
+  margin-left: 5px;
+  background: url(../../img/product/message/icon-blog-revision.png) -57px -26px no-repeat;
+}
+.news span:nth-child(7):hover{
+  background: url(../../img/product/message/icon-blog-revision.png) -58px -52px no-repeat;
+  cursor: pointer;
+}
+.left1 img{
+  width: 100%;
+  margin-bottom:24px;
+}
+.left1 p{
+  line-height: 23px;
+}
+.left1 p:nth-last-child(2) a{
+  text-decoration: none;
+  color: #000;
+}
+.left1 p:nth-last-child(2):hover{
+  text-decoration: underline;
+}
+.left1 p:nth-last-child(1){
+  text-align: right;
+
+}
+.left1 p:nth-last-child(1) a{
+  display: inline-block;
+  color: rgb(73, 165, 115);
+  text-decoration: underline;
+}
+/*2*/
+.news2 span:nth-child(1){
+    background: #fabc3d;
+}
+/*5*/
+.news5 span:nth-child(1){
+  background:  #8dc63f;
+}
+/*下一页*/
+.nextPage{
+  width: 100%;
+  margin: 8px 0;
+  text-align: center;
+  padding: 0 10px;
+}
+.nextPage a{
+  display: inline-block;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #fff;
+  margin-right: 8px;
+  border-radius: 50px;
+  color: #2aad6f;
+}
+.nextPage a:nth-last-child(2){
+  margin-right: 0px;
+}
+.nextPage a:nth-last-child(1){
+  margin-top: 10px;
+}
+.nextPage a:nth-child(2){
+  background: #2aad6f;
+  color: #fff;
+}
+.nextPage a:hover{
+  background: #2aad6f;
+  color: #fff;
+}
+/*内容右边*/
+.contR{
+  width: 32%;
+  float: right;
+}
+/*第一个框*/
+.rightFirst{
+  width: 100%;
+  background: #fff;
+  padding: 35px 0;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+.rightFirst::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.contR p{
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #7b7b7b;
+  margin-left: 40px;
+}
+.rightFirst img{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  height: auto;
+  vertical-align: top;
+}
+.feiLei1{
+  width: 30%;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  margin-bottom: 15px;
+  margin-left: 40px;
+}
+.feiLei1 a{
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+}
+/*第二个框*/
+.se1{
+  padding: 0 30px;
+  margin-bottom: 15px;
+}
+.se1 a{
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+.se1 a img{
+  width: 100%;
+  height: 100%;
+}
+.se1 a p{
+  position: absolute;
+  top:50%;
+  left: 0;
+  font-size: 15px;
+  color: #fff;
+  z-index: 10;
+  margin: 0 40px;
+}
+.se1 .mask{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  left: 0;
+}
+.se1:hover .mask{
+  background: rgba(0, 0, 0, 0.6);
+}
+/*第三个框*/
+.rightThird ul{
+  margin: 0 40px;
+  font-size: 15px;
+}
+.rightThird li{
+  padding-bottom: 5px;
+}
+.rightThird a{
+  vertical-align: top;
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  line-height: 20px;
+}
+.rightThird img{
+  width: 100%;
+  display: none;
+  margin-top: 5px;
+}
+.rightThird li:hover img{
+  display: block;
+}
+.rightThird li:hover a{
+  color: #2aad6f;
+}
+.rightThird .img1{
+  display: block;
+}
