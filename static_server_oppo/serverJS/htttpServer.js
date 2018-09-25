@@ -43,18 +43,24 @@ http.createServer(function (req,res) {
                     res.end(); /*结束响应*/
                 })
             }else{ /*返回这个文件*/
-                /*获取文件类型*/
-                // var mime = mimeModel.getMimeForFs(fs,extname);
+
+                var mime = mimeModel.getMimeForFs(fs,extname,function (mime) {
+                    res.writeHead(200,{"Content-Type":""+mime+";charset='utf-8'"});
+                    res.write(data);
+                    res.end();
+                });
+
+                // var mime = mimeModel.getMimeForFsSync(fs,extname);
                 // res.writeHead(200,{"Content-Type":""+mime+";charset='utf-8'"});
                 // res.write(data);
                 // res.end();
 
-                var mime = mimeModel.getMimeForEventEmitter(fs,eventsEmitter,extname);
-                eventsEmitter.on('getmime',function (mime) {
-                    res.writeHead(200,{"Content-Type":""+mime+";charset='utf-8'"});
-                    // res.write(data);
-                    res.end(data);  //直接在结束时传回数据，否者会报错 write after end
-                })
+                // var mime = mimeModel.getMimeForEventEmitter(fs,eventsEmitter,extname);
+                // eventsEmitter.on('getmime',function (mime) {
+                //     res.writeHead(200,{"Content-Type":""+mime+";charset='utf-8'"});
+                //     //不用res.write(data); 而是直接在结束时传回数据，否者会报错 write after end
+                //     res.end(data);
+                // })
             }
         })
     }
