@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= indexTiele%></title>
+</head>
+<body>
+    <h1> 这是Ejs模板的首页</h1>
+    <%- indexInfo %>
+    <ul>
+        <% for(var i = 0; i < indexList.length; i++ ) {%>
+            <li> <%= indexList[i]%> </li>
+        <% } %>
+    </ul>
+    <a href="/login">前往登录页面</a>
+</body>
+</html>
+<!--
+    “<%= %>”  插入变量
+    “<%- %>”  插入HTML的字符串
+-->
