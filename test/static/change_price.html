@@ -1,34 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
     <meta charset="UTF-8">
     <title>改价</title>
     <style>
         body{padding: 30px}
-        input{width: 550px; height: 30px; margin-bottom: 25px}
-        button{text-align: center; width: 150px; height: 30px; line-height: 30px}
-        .change_wrap{display: none; margin-top: 30px;}
+        .change_page input{width: 550px; height: 30px; margin-bottom: 25px}
+        .change_page button{text-align: center; width: 150px; height: 30px; line-height: 30px}
+        .change_price{margin-top: 30px;}
+        .change_price input{width: 300px;height: 20px;}
+        .price_col{margin-bottom: 25px}
+        .change_price button{text-align: center; width: 150px; height: 30px; line-height: 30px}
     </style>
 </head>
 <body>
-    
-    <div id="change_page_query">
-    	<h2>改价页面</h2>
-        <input type="text" name="urls" placeholder="请输入页面地址" value="http://www.bty123.top">
-        <button>提交</button>
+    <div id="vue_wrap">
+        <div id="change_page_query" class="change_page">
+            <h3>输入修改链接</h3>
+            <input type="text" name="urls" placeholder="请输入页面地址" value="http://www.bty123.top/tw/eyebrow_powder?cf=localhost">
+            <button>提交</button>
+        </div>
+
+        <div class="change_price" id="change_price_query" v-if="oldPrice">
+            <h3>输入新价格</h3>
+            <div class="price_col" v-for="(value, index) in oldPrice">
+                <span>原价{{index+1}}：{{value}} -- </span>
+                <input type="number" name="price" placeholder="请输入新价格">
+            </div>
+
+            <button @click="submitNewPrice">提交</button>
+            <a :href="local_href" target="_blank">本地预览</a>
+        </div>
     </div>
 
-    <div class="change_wrap" id="change_price_query">
-    	<div>
-    		原价格：
-    	</div>
-    	<input type="number" name="price" placeholder="请输入新价格">
-        <button>提交</button>
-    </div>
 </body>
 <script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/vue-2.5.16.min.js"></script>
 <script>
+    var change_price = new Vue({
+        el:'#vue_wrap',
+        data:{
+            oldPrice:'',
+            local_href:'',
+        },
+        methods:{
+            submitNewPrice:function () {
+                var newPrice = [];
+                for(var i=0;i<$('.price_col input').length;i++){
+                    newPrice.push($('.price_col input').eq(i).val());
+                }
+                console.log(newPrice);
+                $.ajax({
+                    type:"get",
+                    url:"/change_price_query",
+                    async:true,
+                    data:{
+                        urls:$('#change_page_query input').val(),
+                        new_price:JSON.stringify(newPrice),
+                        old_price:JSON.stringify(change_price.oldPrice),
+                    },
+                    success:function(msg){
+                        if (msg=="1"){
+                            alert("修改成功");
+                        }
+                    },
+                    error:function(err){
+                        console.log(err);
+                    }
+                });
+            }
+        },
+    })
+
 	$('#change_page_query button').on('click',function(event){
 		$.ajax({
 			type:"get",
@@ -39,9 +83,12 @@
 			},
 			success:function(msg){
 				var data = JSON.parse(msg);
-				if (data.msg =="1"){
-		            $('.change_wrap').show();
-		        }
+				if (data.status =="1"){
+                    change_price.oldPrice = data.endPrice;
+                    change_price.local_href = data.local_url;
+		        }else if (data.status =="0"){
+                    alert(data.msg);
+                }
 			},
 			error:function(err){
 				console.log(err);
@@ -49,27 +96,6 @@
 			
 		});
 	})
-	$('#change_price_query button').on('click',function(event){
-		$.ajax({
-			type:"get",
-			url:"/change_price_query",
-			async:true,
-			data:{
-				urls:$('#change_page_query input').val(),
-				price:$('#change_price_query input').val(),
-			},
-			success:function(msg){
-				if (msg=="1"){
-		            alert("修改成功");
-		        }
-			},
-			error:function(err){
-				console.log(err);
-			}
-		});
-	})
-	
-	
 
 </script>
 </html>
