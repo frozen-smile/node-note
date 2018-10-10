@@ -37,25 +37,43 @@ http.createServer(function (req, res) {
         fs.readFile(absolout_address + '.ftl',function (err,data) {
             if (err){
                 console.log(err);
-                res.writeHead(404,{"Content-Type":"application/json; charset='utf-8'"});
-                res.end('404');
+                var endObj = {
+                    status:'0',
+                    msg:"链接错误或该页面已下架"
+                }
+                var endString = JSON.stringify(endObj);
+                res.writeHead(200,{"Content-Type":"application/json; charset='utf-8'"});
+                res.end(endString);
+                return false;
             }
-            let html = data.toString();
-            let $ = cheerio.load(html);
-            let ifwide = pageName.split('_').indexOf('wide');
-
-            if (ifwide== -1){
-                let priceArr = [];
-                let inps = $('#radioCombox .inp input') || $('#radioCombox label input');
-                if (!inps){
+            var html = data.toString();
+            var $ = cheerio.load(html);
+            var ifwide = pageName.split('_').indexOf('wide');
+            var priceArr = [];
+            var inps = $('#radioCombox input');
+            if ((ifwide== -1) || inps != "" ){
+                if (inps == ""){
+                    var script = $('script[type="text/javascript"]').html();
+                    var packagelistStr = script.match(/packagelist[^\]]*\]/);
+                    var packageObj = "var " + packagelistStr[0].replace(/\s/g,"");
+                    eval(packageObj);
+                    for (let i = 0; i< packagelist.length; i++){
+                        if (priceArr.indexOf(packagelist[i].price) == -1){
+                            priceArr.push(packagelist[i].price);
+                        }
+                    }
                     var endObj = {
                         status:'1',
+                        endPrice:priceArr,
                         msg:"模板5页面"
                     }
                 }else{
                     for (let i = 0; i< inps.length; i++){
-                        if (inps.eq(i).attr('data-price') != priceArr[i-1]){
-                            priceArr.push(inps.eq(i).attr('data-price'));
+                        var thisPrice = inps.eq(i).attr('data-price');
+                        if (i==0 && thisPrice!=undefined){
+                            priceArr.push(thisPrice);
+                        }else if(priceArr.indexOf(thisPrice) == -1 && thisPrice!=undefined){
+                            priceArr.push(thisPrice);
                         }
                     }
                     if (priceArr.length==0){
@@ -71,9 +89,14 @@ http.createServer(function (req, res) {
                         }
                     }
                 }
-            }else{
+            }else if(ifwide!= -1 && inps == ""){
+                var combo = JSON.parse($('#combe').val());
+                for (let i = 0; i< combo.length; i++){
+                    priceArr.push(combo[i].price);
+                }
                 var endObj = {
                     status:'1',
+                    endPrice:priceArr,
                     msg:"宽屏页面"
                 }
             }
@@ -96,7 +119,6 @@ http.createServer(function (req, res) {
         var pageName = pageNameARR[pageNameARR.length - 1];
         let absolout_address = path.join(baseUrl,page_pathname);
 
-        console.log(typeof new_price);
 
         fs.readFile(absolout_address + '.ftl',function (err,data) {
             if (err){

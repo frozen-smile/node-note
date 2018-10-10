@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
     <meta charset="UTF-8">
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
     <title>改价</title>
     <style>
-        body{padding: 30px}
-        .change_page input{width: 550px; height: 30px; margin-bottom: 25px}
-        .change_page button{text-align: center; width: 150px; height: 30px; line-height: 30px}
+        body{padding: 30px;}
+        .change_page input{width: 550px; height: 30px; margin-bottom: 25px;vertical-align: top;}
+        .change_page button{text-align: center; width: 150px; height: 35px; line-height: 35px;}
         .change_price{margin-top: 30px;}
         .change_price input{width: 300px;height: 20px;}
-        .price_col{margin-bottom: 25px}
-        .change_price button{text-align: center; width: 150px; height: 30px; line-height: 30px}
+        .price_col{margin-bottom: 25px;}
+        .change_price button{text-align: center; width: 150px; height: 35px; line-height: 35px;}
+        .page_temp span{color: red;}
+        .preview{display: inline-block; text-align: center; border-radius: 5px; border-style: double; color: white; text-decoration: none; margin-left: 40px;width: 150px; height: 35px; line-height: 35px; background: #2aad6f;}
     </style>
 </head>
 <body>
     <div id="vue_wrap">
         <div id="change_page_query" class="change_page">
             <h3>输入修改链接</h3>
-            <input type="text" name="urls" placeholder="请输入页面地址" value="http://www.bty123.top/tw/eyebrow_powder?cf=localhost">
+            <input type="text" name="urls" placeholder="请输入页面地址" value="">
             <button>提交</button>
         </div>
 
@@ -28,9 +30,9 @@
                 <span>原价{{index+1}}：{{value}} -- </span>
                 <input type="number" name="price" placeholder="请输入新价格">
             </div>
-
+            <p class="page_temp">页面模板：<span>{{page_temp}}</span></p>
             <button @click="submitNewPrice">提交</button>
-            <a :href="local_href" target="_blank">本地预览</a>
+            <a :href="local_href" target="_blank" class="preview">本地预览</a>
         </div>
     </div>
 
@@ -43,6 +45,7 @@
         data:{
             oldPrice:'',
             local_href:'',
+            page_temp:"",
         },
         methods:{
             submitNewPrice:function () {
@@ -81,11 +84,11 @@
 			data:{
 				urls:$('#change_page_query input').val(),
 			},
-			success:function(msg){
-				var data = JSON.parse(msg);
+			success:function(data){
 				if (data.status =="1"){
                     change_price.oldPrice = data.endPrice;
                     change_price.local_href = data.local_url;
+                    change_price.page_temp = data.msg;
 		        }else if (data.status =="0"){
                     alert(data.msg);
                 }
