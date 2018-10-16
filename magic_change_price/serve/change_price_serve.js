@@ -53,10 +53,16 @@ http.createServer(function (req, res) {
             var inps = $('#radioCombox input');
             if ((ifwide== -1) || inps != "" ){
                 if (inps == ""){
-                    var script = $('script[type="text/javascript"]').html();
-                    var packagelistStr = script.match(/packagelist[^\]]*\]/);
-                    var packageObj = "var " + packagelistStr[0].replace(/\s/g,"");
+                    let script = $('script[type="text/javascript"]').html();
+                    let packagelistStr = script.match(/packagelist[^\]]*\]/);
+                    let packageObj = "var " + packagelistStr[0].replace(/\s/g,"");
                     eval(packageObj);
+                    let productInfoStr = script.match(/productInfo[^}]*(?=path)/);
+                    let productObj = "var " + productInfoStr[0].replace(/\s/g,"") + "}";
+                    eval(productObj);
+                    let combo = productInfo.discount_text;
+                    let discount_2 = productInfo.discount_2_price_code;
+                    let discount_3 = productInfo.discount_3_price_code;
                     for (let i = 0; i< packagelist.length; i++){
                         if (priceArr.indexOf(packagelist[i].price) == -1){
                             priceArr.push(packagelist[i].price);
@@ -65,6 +71,10 @@ http.createServer(function (req, res) {
                     var endObj = {
                         status:'1',
                         endPrice:priceArr,
+                        combo:combo,
+                        discount_2:discount_2,
+                        discount_3:discount_3,
+                        template:"5",
                         msg:"模板5页面"
                     }
                 }else{
@@ -82,9 +92,18 @@ http.createServer(function (req, res) {
                             msg:"模板一，需手动改成模板二"
                         }
                     }else{
+                        let nation = $('#area_code').val();
+                        let combo = $('.item_bar').next().text();
+                        let discount_2 = $('#discount_2_price_code').val();
+                        let discount_3 = $('#discount_3_price_code').val();
                         var endObj = {
                             status:'1',
                             endPrice:priceArr,
+                            nation:nation,
+                            combo:combo,
+                            discount_2:discount_2,
+                            discount_3:discount_3,
+                            template:"2",
                             msg:"模板2或模板3页面"
                         }
                     }
@@ -109,6 +128,11 @@ http.createServer(function (req, res) {
     if (pathname=='/change_price_query') {
         var new_price = JSON.parse(pathObj.query.new_price);
         var old_price = JSON.parse(pathObj.query.old_price);
+        var nation = pathObj.query.nation;
+        var template = pathObj.query.template;
+        var combo = JSON.parse(pathObj.query.combo);
+        var discount_2 = JSON.parse(pathObj.query.discount_2);
+        var discount_3 = JSON.parse(pathObj.query.discount_3);
         let pagrurl = pathObj.query.urls;
         let page_pathname = url.parse(pagrurl).pathname;
 
@@ -119,17 +143,55 @@ http.createServer(function (req, res) {
         var pageName = pageNameARR[pageNameARR.length - 1];
         let absolout_address = path.join(baseUrl,page_pathname);
 
-
         fs.readFile(absolout_address + '.ftl',function (err,data) {
             if (err){
                 console.log(err);
                 return false;
             }
             var html = data.toString();
-            for (let i = 0;i<new_price.length;i++){
-                var reg = new RegExp(old_price[i],"g");
-                html = html.replace(reg,new_price[i]);
+            if(new_price != ''){
+                if (nation == "3" || nation == "5"){
+                    let oldPriceFormat = formatNum(old_price[0]);
+                    let newPriceFormat = formatNum(new_price[0]);
+                    let reg = new RegExp(oldPriceFormat,"g");
+                    html = html.replace(reg,newPriceFormat);
+                }
+                for (let i = 0;i<new_price.length;i++){
+                    let reg = new RegExp(old_price[i],"g");
+                    html = html.replace(reg,new_price[i]);
+                }
             }
+            if(combo[1]){
+                let reg = new RegExp(combo[0],"g");
+                html = html.replace(reg,combo[1]);
+            }
+            console.log("模板" + template);
+
+            if (discount_2[1]){
+                let regstr,new_regstr;
+                if (template == "5"){
+                    regstr = 'discount_2_price_code:'+ discount_2[0];
+                    new_regstr = 'discount_2_price_code:'+ discount_2[1];
+                }else if(template == "2"){
+                    regstr = 'id="discount_2_price_code" value="'+ discount_2[0] + '"';
+                    new_regstr = 'id="discount_2_price_code" value="'+ discount_2[1] + '"';
+                }
+                let reg = new RegExp(regstr,"g");
+                html = html.replace(reg,new_regstr);
+            }
+            if (discount_3[1]){
+                let regstr,new_regstr;
+                if (template == "5"){
+                    regstr = 'discount_3_price_code:'+ discount_3[0];
+                    new_regstr = 'discount_3_price_code:'+ discount_3[1];
+                }else if(template == "2"){
+                    regstr = 'id="discount_3_price_code" value="'+ discount_3[0] + '"';
+                    new_regstr = 'id="discount_3_price_code" value="'+ discount_3[1] + '"';
+                }
+                let reg = new RegExp(regstr,"g");
+                html = html.replace(reg,new_regstr);
+            }
+
             fs.writeFile(absolout_address + '.ftl',html,function (err,data) {
                 if (err){
                     console.log(err);
@@ -142,3 +204,15 @@ http.createServer(function (req, res) {
     }
     staticServe.creatStaticServe(req,res,'../static');
 }).listen(8001);
+
+
+function formatNum(num) {
+    var result = [ ], counter = 0;
+    num = (num || 0).toString().split('');
+    for (var i = num.length - 1; i >= 0; i--) {
+        counter++;
+        result.unshift(num[i]);
+        if (!(counter % 3) && i != 0) { result.unshift(','); }
+    }
+    return result.join('');
+}

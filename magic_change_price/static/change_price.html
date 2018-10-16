@@ -14,6 +14,7 @@
         .change_price button{text-align: center; width: 150px; height: 35px; line-height: 35px;}
         .page_temp span{color: red;}
         .preview{display: inline-block; text-align: center; border-radius: 5px; border-style: double; color: white; text-decoration: none; margin-left: 40px;width: 150px; height: 35px; line-height: 35px; background: #2aad6f;}
+        .combo_div{margin-bottom: 12px;}
     </style>
 </head>
 <body>
@@ -29,6 +30,21 @@
             <div class="price_col" v-for="(value, index) in oldPrice">
                 <span>原价{{index+1}}：{{value}} -- </span>
                 <input type="number" name="price" placeholder="请输入新价格">
+            </div>
+            <h3>输入新的折扣信息</h3>
+            <div class="combo_change">
+                <div class="combo_div">
+                    <span>原折扣文案：{{combo}} -- </span>
+                    <input type="text" id="new_combo" placeholder="请输入新折扣文案">
+                </div>
+                <div class="combo_div">
+                    <span>折扣2：{{discount_2}} -- </span>
+                    <input type="number" id="new_discount_2" placeholder="请输入新折扣2">
+                </div>
+                <div class="combo_div">
+                    <span>折扣3：{{discount_3}} -- </span>
+                    <input type="number" id="new_discount_3" placeholder="请输入新折扣3">
+                </div>
             </div>
             <p class="page_temp">页面模板：<span>{{page_temp}}</span></p>
             <button @click="submitNewPrice">提交</button>
@@ -46,6 +62,11 @@
             oldPrice:'',
             local_href:'',
             page_temp:"",
+            nation:"",
+            combo:"",
+            discount_2:"",
+            discount_3:"",
+            template:"",
         },
         methods:{
             submitNewPrice:function () {
@@ -53,19 +74,28 @@
                 for(var i=0;i<$('.price_col input').length;i++){
                     newPrice.push($('.price_col input').eq(i).val());
                 }
-                console.log(newPrice);
+                var comboBoth = [$.trim(change_price.combo),$.trim($('#new_combo').val())];
+                var discount_2_Both = [change_price.discount_2,$.trim($('#new_discount_2').val())];
+                var discount_3_Both = [change_price.discount_3,$.trim($('#new_discount_3').val())];
+                console.log(comboBoth);
                 $.ajax({
                     type:"get",
                     url:"/change_price_query",
                     async:true,
                     data:{
-                        urls:$('#change_page_query input').val(),
+                        urls:$.trim($('#change_page_query input').val()),
                         new_price:JSON.stringify(newPrice),
                         old_price:JSON.stringify(change_price.oldPrice),
+                        nation:change_price.nation,
+                        template:change_price.template,
+                        combo:JSON.stringify(comboBoth),
+                        discount_2:JSON.stringify(discount_2_Both),
+                        discount_3:JSON.stringify(discount_3_Both),
                     },
                     success:function(msg){
                         if (msg=="1"){
                             alert("修改成功");
+                            location.reload();
                         }
                     },
                     error:function(err){
@@ -82,13 +112,18 @@
 			url:"/change_page_query",
 			async:true,
 			data:{
-				urls:$('#change_page_query input').val(),
+				urls:$.trim($('#change_page_query input').val()),
 			},
 			success:function(data){
 				if (data.status =="1"){
                     change_price.oldPrice = data.endPrice;
                     change_price.local_href = data.local_url;
                     change_price.page_temp = data.msg;
+                    change_price.nation = data.nation;
+                    change_price.combo = data.combo;
+                    change_price.discount_2 = data.discount_2;
+                    change_price.discount_3 = data.discount_3;
+                    change_price.template = data.template;
 		        }else if (data.status =="0"){
                     alert(data.msg);
                 }
