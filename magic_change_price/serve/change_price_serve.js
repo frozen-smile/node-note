@@ -32,7 +32,7 @@ http.createServer(function (req, res) {
         if (pageNameARR.length==3){
             page_pathname+= '/' + pageNameARR[pageNameARR.length - 1]
         }
-        var pageName = pageNameARR[pageNameARR.length - 1];
+
         let absolout_address = path.join(baseUrl,page_pathname);
         fs.readFile(absolout_address + '.ftl',function (err,data) {
             if (err){
@@ -48,10 +48,11 @@ http.createServer(function (req, res) {
             }
             var html = data.toString();
             var $ = cheerio.load(html);
-            var ifwide = pageName.split('_').indexOf('wide');
+            var ifwide = /header_wide\.ftl/.test(html);
             var priceArr = [];
-            var inps = $('#radioCombox input');
-            if ((ifwide== -1) || inps != "" ){
+            var inps = $('input[type="radio"][name="name"]');
+
+            if (!ifwide ){
                 if (inps == ""){
                     let script = $('script[type="text/javascript"]').html();
                     let packagelistStr = script.match(/packagelist[^\]]*\]/);
@@ -93,7 +94,7 @@ http.createServer(function (req, res) {
                         }
                     }else{
                         let nation = $('#area_code').val();
-                        let combo = $('.item_bar').next().text();
+                        let combo = $('.item_bar').next().text() || $("#money label b").text() || $('.form_act').text();
                         let discount_2 = $('#discount_2_price_code').val();
                         let discount_3 = $('#discount_3_price_code').val();
                         var endObj = {
@@ -108,7 +109,7 @@ http.createServer(function (req, res) {
                         }
                     }
                 }
-            }else if(ifwide!= -1 && inps == ""){
+            }else if(ifwide && inps == ""){
                 var combo = JSON.parse($('#combe').val());
                 for (let i = 0; i< combo.length; i++){
                     priceArr.push(combo[i].price);
@@ -165,8 +166,6 @@ http.createServer(function (req, res) {
                 let reg = new RegExp(combo[0],"g");
                 html = html.replace(reg,combo[1]);
             }
-            console.log("模板" + template);
-
             if (discount_2[1]){
                 let regstr,new_regstr;
                 if (template == "5"){
@@ -191,7 +190,6 @@ http.createServer(function (req, res) {
                 let reg = new RegExp(regstr,"g");
                 html = html.replace(reg,new_regstr);
             }
-
             fs.writeFile(absolout_address + '.ftl',html,function (err,data) {
                 if (err){
                     console.log(err);
