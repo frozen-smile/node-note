@@ -48,11 +48,12 @@ http.createServer(function (req, res) {
             }
             var html = data.toString();
             var $ = cheerio.load(html);
-            var ifwide = /header_wide\.ftl/.test(html);
+            var ifwide = /asia_order\.js/.test(html);
             var priceArr = [];
             var inps = $('input[type="radio"][name="name"]');
-
+            console.log(ifwide);
             if (!ifwide ){
+                console.log('no_wide');
                 if (inps == ""){
                     let script = $('script[type="text/javascript"]').html();
                     let packagelistStr = script.match(/packagelist[^\]]*\]/);
@@ -110,6 +111,8 @@ http.createServer(function (req, res) {
                     }
                 }
             }else if(ifwide && inps == ""){
+                console.log('yes_wide');
+
                 var combo = JSON.parse($('#combe').val());
                 for (let i = 0; i< combo.length; i++){
                     priceArr.push(combo[i].price);
@@ -201,7 +204,9 @@ http.createServer(function (req, res) {
         })
     }
     staticServe.creatStaticServe(req,res,'../static');
-}).listen(8001);
+}).listen(8001,function(){
+	console.log('start success \nStarting server at http://localhost:8001/ \nQuit the server with CTRL+C');
+});
 
 
 function formatNum(num) {
