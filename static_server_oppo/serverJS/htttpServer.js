@@ -64,4 +64,6 @@ http.createServer(function (req,res) {
             }
         })
     }
-}).listen(8002);
+}).listen(8002,function(){
+	console.log('start success \nStarting server at http://localhost:8002/ \nQuit the server with CTRL+C');
+});
