@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="form_wrap">
+        <select id="select">
+            <option>option 1</option>
+            <option>option 2</option>
+        </select>
+
+        <input type="text" id="name" placeholder="name">
+
+        <input type="email" id="email" placeholder="email">
+
+        <textarea  id="msg" cols="30" rows="10" placeholder="message"></textarea>
+
+        <input type="text" id="orderNum" placeholder="订单号">
+
+        <button id="send">Send</button>
+    </div>
+
+</body>
+<script type="text/javascript" src="./js/jquery_004.js"></script>
+<script type="text/javascript">
+
+    $('#send').click(function () {
+        var send = {
+            title: $("#select option:selected").text(),
+            msg: $('#msg').val(),
+            name: $('#name').val(),
+            email: $('#email').val(),
+            orderNum: $('#orderNum').val(),
+        }
+        console.log(send)
+        $.ajax({
+            url:"/sendemail",
+            type:'post',
+            data:send,
+            success:function(data){
+                if (data.status == 1) {
+                    alert('发送成功');
+                }
+            },
+            error:function(err){
+                console.log(err)
+            }
+        })
+    })
+
+
+
+</script>
+</html>
