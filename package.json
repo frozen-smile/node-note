@@ -25,6 +25,10 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "mysql": "^2.16.0",
-    "nodemailer": "^4.7.0"
+    "nodemailer": "^4.7.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.3"
   }
 }

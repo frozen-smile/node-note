@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'futura_bold';
+  src: url('./futura_bold.woff') format('woff'), url('./futura_bold.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.hello {
+  color: red;
+  font-family: 'futura_bold';
+  font-size: 20px;
+}
+.img{
+  display: block;
+
+}
